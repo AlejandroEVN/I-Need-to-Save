@@ -15,7 +15,7 @@ async function loadTransactionsWithFilters(filters) {
     return transactions;
 }
 
-async function loadTransactions(topFive = "") {
+async function loadTransactionsForChart(topFive = "") {
     const response = await fetch(`charts/data`, {
         method: "POST",
         body: JSON.stringify(topFive)
