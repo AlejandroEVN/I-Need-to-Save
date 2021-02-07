@@ -122,7 +122,7 @@ function openTransactionDetails(transaction) {
 }
 
 function deleteTransaction(transaction) {
-    const perPage = document.getElementById('items-per-page');
+    const perPage = document.getElementById('items-per-page').value;
     deleteTransactionWithId(transaction.id)
     .then(result => {
         let filters = {
