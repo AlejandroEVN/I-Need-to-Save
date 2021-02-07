@@ -73,6 +73,7 @@ The node_modules contains two libraries. ChartsJs and MomentJs.
 - Libraries: ChartsJs | MomentJs
 - Bootstrap
 - CSS
+- Sass
 
 ### **Usage**
 - Clone the repository into your machine.
