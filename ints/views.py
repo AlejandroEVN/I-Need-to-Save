@@ -227,6 +227,10 @@ def charts(request):
 @csrf_exempt
 def get_transactions_for_charts(request):
     transactions = get_transactions(request.user)
+    
+    current_year = datetime.datetime.now().year
+
+    transactions = transactions.filter(receipt_date__year=current_year)
 
     top = json.loads(request.body)
 
