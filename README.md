@@ -1,22 +1,16 @@
-# **Final Project**
+### Project I Need to Save
 =================
-## Welcome to I Need to Save!
-##### Author: AlejandroEVN
----
 
-### **Introduction**
 I Need to Save is a web application that allows you to keep track of your expenditures and shows you useful
 in order to help you save more money!
 The motivation for this projoect comes from my own experience of not being able to efficiently keep track of what I spend. So the aim is to easily and efficiently display the expenditures to have a better control of what you spend.
 
-### **Justification requierement**
-The project is based on the course's projects but it is quite different in the way of the data is displayed and managed (for example, displaying data in charts).
-There is a fair amount of JavaScript code, as most of the pages views are filled with dinamic elements created with JavaScript, using the data received from the backend.
+The app was entirely coded by me. The main objective of this project was to learn how to work with data coming from the backend by using JavaScript libraries like ChartJS and MomentJS. 
+I have also introduced JavaScript pagination, which I coded without using any existing library. 
+The table containing the transactions made by the user can be filtered and ordered. All this functionality was coded with vanilla JavaScript.
 
-### **Techonologies**
-For this web application I have used Python, Django and SQLite for the backend and HTML, CSS and JavaScript for the frontend.
-The required version of Django is in the requirements.txt file.
-The two JavaScript libraries used for the charts and date and time are included in the Js folder.
+### Demo
+SOON
 
 ### **Pages**
 - **Index**: Landing page. Contains title and login form. Unregistered users have two links that takes them to the registration form.
@@ -69,14 +63,16 @@ File that cointains the code to order the list in "All transactions" page depend
 File containing dictionaries that are used as templates to filter and manage the data returning from the backend.
 
 - **Rest**:
-All of the files names refer to the pages they affect. Most of the application's html is directly affected by JavaScript and updated with AJAX calls to the backend, reducing the amount of times that the HTMLs have to be rendered.
+All of the files names refer to the HTML pages they affect. Most of the application's HTML is directly affected by JavaScript and updated with AJAX calls to the backend, reducing the amount of times that the HTMLs have to be rendered.
 The node_modules contains two libraries. ChartsJs and MomentJs.
 
-### **HTML Templates**
-Eight templates in total.
-
-- **pagination.html**:
-Template that only contains a template to display the pagination buttons. It is included in the all.html template.
+#### Tech Stack
+- Python
+- Django
+- JavaScript
+- Libraries: ChartsJs | MomentJs
+- Bootstrap
+- CSS
 
 ### Usage
 - Clone the repository into your machine.
