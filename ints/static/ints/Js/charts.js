@@ -22,7 +22,7 @@ function clearChart() {
 function createCategoryChart() {
     let expenditures = Object.assign({}, expendituresTemplate);
 
-    loadTransactions().then(transactions => {
+    loadTransactionsForChart().then(transactions => {
         transactions.forEach(transaction => {
             let category = transaction.category;
             expenditures[category] += parseFloat(transaction.amount.slice(1));
@@ -44,7 +44,7 @@ function createCategoryChart() {
 function createMonthlyChart() {
     let monthlyExpenditures = Object.assign({}, monthsTemplate);
 
-    loadTransactions().then(transactions => {
+    loadTransactionsForChart().then(transactions => {
         transactions.forEach(transaction => {
             let month = transaction.receipt_date.substring(0,3);
             monthlyExpenditures[month] += parseFloat(transaction.amount.slice(1));
@@ -67,7 +67,7 @@ function createTopChart() {
     let topFive = {}
     let colorsForChart = []
        
-    loadTransactions("top").then(transactions => {
+    loadTransactionsForChart("top").then(transactions => {
         transactions.forEach(transaction => {
             topFive[transaction.reference] = transaction.amount.slice(1);
             colorsForChart.push(categoryColors[transaction.category]);
