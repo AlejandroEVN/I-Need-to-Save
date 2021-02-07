@@ -1,0 +1,86 @@
+{% extends "ints/layout.html" %}
+{% load static %}
+{% load currency %}
+
+{% block body %}
+    <div class="row m-1">
+        <div class="col-12 col-lg-6 border shadow mb-2 min-height" id="profile_page">
+            <div class="container-fluid p-1">                
+                <h4 class="container-fluid my-0">
+                    <span id="username">{{profile.username}}</span>
+                    <button id="edit-username" class="btn btn-sm m-0 p-0" class="h-25">                        
+                        <span id="icon" class="material-icons">create</span>
+                    </button>
+                </h4>
+                <div class="container-fluid mb-2 d-none" id="new-username">
+                    <input class="w-75 form-control d-inline-block" type="text" id="username-input" placeholder="New username">
+                    <p class="alert alert-danger d-none position-fixed" id="invalid-username">That username has already been taken!</p>
+                    <button class="btn btn-outline-success" id="submit-username">Submit</button>
+                </div>
+                <div class="container-fluid mb-2">
+                    <img class="rounded img-fluid" id="avatar-img" src="
+                    {% if profile.avatar == 'default_user_avatar' %}
+                        static/ints/images/avatar/{{ profile.avatar }}.png
+                    {% else %}
+                        {{profile.avatar}}
+                    {% endif %}" />
+                    <div class="container-fluid p-0 mb-2 d-none" id="new-avatar">
+                        <p class="alert alert-danger d-none position-fixed" id="invalid-url">The URL is not valid</p>
+                        <input class="form-control w-75 my-1" id="avatar-url" type="text" placeholder="Avatar URL">
+                        <button class="btn btn-sm btn-outline-success" id="submit-avatar">Submit</button>
+                        <button class="btn btn-sm btn-outline-danger" id="cancel-avatar">Cancel</button>
+                        <button class="btn btn-sm btn-outline-warning" id="default-avatar">Default</button>
+                    </div>
+                </div>
+                <div class="container-fluid mb-2">
+                    <button class="btn btn-sm btn-outline-success" id="edit-avatar">Change avatar</button>
+                </div>
+                <div class="container-fluid mb-2 text-muted">Last online: {{profile.last_login}}</div>
+                <hr>
+                <div class="container-fluid mb-2 text-muted">Total transactions this year: {{profile.transactions}}</div>
+                <div class="container-fluid mb-2 text-muted">Total spent this year: {{spent_this_year|currencyUSD}}</div>
+                <div class="container-fluid mb-2 text-muted">Total spent last year: {{spent_last_year|currencyUSD}}</div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-6 border shadow min-height">
+            <div class="container-fluid m-0 p-0">
+                <h4 class="p-2">Latest transactions</h4>
+                {% for transaction in latest_transactions %}
+                <div class="bg-{{transaction.category|lower}} m-1 rounded border">
+                    <div class="row m-0">
+                        <div class="col-4 m-0">
+                            <span><strong>{{transaction.reference}}</strong></span>
+                        </div>
+                        <div class="col-3 m-0">
+                            <span>{{transaction.amount|currencyUSD}}</span>
+                        </div>
+                        <div class="col-4 m-0">
+                            <span class="text-muted">Added: {{transaction.timestamp}}</span>
+                        </div>
+                        <div class="col-1 m-0">
+                            <span><img class="profile-category-image float-right" src="./static/ints/icons/{{transaction.category}}-icon.png" /></span>
+                        </div>
+                    </div>       
+                    <div class="row m-0 pb-0">
+                        <div class="col-4 m-0">
+                        </div>
+                        <div class="col-3 m-0">
+                        </div>
+                        <div class="col-4 m-0">
+                            <span class="text-muted">Receipt: {{transaction.receipt_date}}</span>
+                        </div>
+                        <div class="col-1 m-0">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>    
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'ints/Js/ajax.js' %}"></script>
+<script src="{% static 'ints/Js/profileEdit.js' %}"></script>
+{% endblock %}

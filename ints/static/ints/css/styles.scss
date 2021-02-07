@@ -1,0 +1,66 @@
+$color_food: #ffdfba;
+$color_leisure: #ffffba;
+$color_groceries: #bae1ff;
+$color_debts: #ffb3ba;
+$color_other: #baffc9;
+$color_title: #aa2424;
+
+.bg-food {
+    background-color: $color_food;
+}
+
+.bg-leisure {
+    background-color: $color_leisure;
+}
+
+.bg-groceries {
+    background-color: $color_groceries;
+}
+
+.bg-debts {
+    background-color: $color_debts;
+}
+
+.bg-other {
+    background-color: $color_other;
+}
+
+.h-250 {
+    height: 250px;
+}
+
+.order-by {
+    cursor: pointer;
+    box-sizing: border-box;
+     &:hover {
+         text-decoration: underline;
+     }
+}
+
+.text-title {
+    color: $color_title;
+}
+
+.bg-soft {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Profile */
+
+#avatar-img {
+    width: 150px;
+    height: 150px;
+}
+
+.profile-category-image {
+    width: 50px!important;
+    height: 50px!important;
+}
+
+.landing-page {
+    height: calc(100vh - 77px);
+}
+
+.min-height {
+    height: 37rem;
+}

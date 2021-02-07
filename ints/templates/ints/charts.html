@@ -1,0 +1,30 @@
+{% extends "ints/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="row mb-3">
+    <div class="col display-4">
+        Some statistics
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-lg-3 mb-3">
+        <select class="custom-select" id="chartFilter">
+            <option selected>Select chart</option>
+            <option>Category</option>
+            <option>Monthly</option>
+            <option>Top 5</option>
+        </select>
+    </div>
+    <div class="col-12 col-lg-9" id="statistics-container">
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'ints/Js/ajax.js' %}"></script>
+<script src="{% static 'ints/Js/chartDataTemplateAndColors.js' %}"></script>
+<script src="{% static 'ints/Js/charts.js' %}"></script>
+{% endblock %}

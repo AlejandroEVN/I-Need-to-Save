@@ -1,0 +1,40 @@
+{% extends "ints/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="row px-5">
+    <div class="col display-4">
+        Transactions dashboard
+    </div>
+</div>
+
+<div class="row px-5">
+    <div class="col col-lg-5 p-3" style="max-width: 600px">
+        <form action="{% url 'add' %}" method="POST">
+            {% csrf_token %}
+            {% for field in form.visible_fields %}
+                {{field.label}} {{field}}
+            {% endfor %}
+            <input type="submit" class="btn btn-sm btn-outline-success w-25 mb-1 mx-0" value="Add">
+
+        </form>
+    </div>
+    <div class="col-12 col-lg-3 ml-auto m-1 h-250 shadow bg-debts rounded" id="debts"></div>
+
+    <div class="col-12 col-lg-3 m-1 h-250 bg-food shadow rounded" id="food">
+    </div>
+</div>
+
+<div class="row px-5">
+    <div class="col-12 col-lg-3 ml-auto m-1 h-250 shadow bg-groceries rounded" id="groceries"></div>
+
+    <div class="col-12 col-lg-3 m-1 h-250 shadow bg-leisure rounded" id="leisure"></div>
+
+    <div class="col-12 col-lg-3 m-1 h-250 shadow bg-other rounded" id="other"></div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'ints/Js/ajax.js' %}"></script>
+<script src="{% static 'ints/Js/dashboard.js' %}"></script>
+{% endblock %}

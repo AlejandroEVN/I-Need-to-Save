@@ -1,0 +1,61 @@
+.bg-food {
+  background-color: #ffdfba;
+}
+
+.bg-leisure {
+  background-color: #ffffba;
+}
+
+.bg-groceries {
+  background-color: #bae1ff;
+}
+
+.bg-debts {
+  background-color: #ffb3ba;
+}
+
+.bg-other {
+  background-color: #baffc9;
+}
+
+.h-250 {
+  height: 250px;
+}
+
+.order-by {
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.order-by:hover {
+  text-decoration: underline;
+}
+
+.text-title {
+  color: #aa2424;
+}
+
+.bg-soft {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Profile */
+#avatar-img {
+  width: 150px;
+  height: 150px;
+}
+
+.profile-category-image {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.landing-page {
+  height: calc(100vh - 77px);
+}
+
+.min-height {
+  height: 37rem;
+}
+/*# sourceMappingURL=styles.css.map */

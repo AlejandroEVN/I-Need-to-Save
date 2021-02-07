@@ -1,0 +1,42 @@
+{% extends "ints/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="row landing-page text-light">
+        <div class="col-12 pt-2">
+            <div class="container bg-soft rounded border border-dark shadow">
+                <h1 class="display-2 text-danger">I Need</h1>
+                <h1 class="display-2 text-danger pl-5">To Save</h1>
+                <p class="pl-5 mr-5">A website to keep track of your expenditures</p>
+            </div>
+            <div class="col-12 pt-5">            
+                <div class="container p-2 w-75 h-50">
+                    <h2 class="display-4 text-danger">Get Started !</h2>
+                    {% if err_msg %}
+                    <div class="alert alert-danger" id="invalid-credentials">{{err_msg}}</div>
+                    {% endif %}
+                    <form class="text-center" action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="my-1">
+                                {{field}}
+                            </div>
+                        {% endfor %}
+                        <input type="submit" class="btn btn-sm btn-outline-light my-2 mx-auto" value="Login">
+                    </form>
+                    <hr class="border-dark">
+                    <p>Don't have an account? Register <a class="badge badge-pill badge-info" href="{% url 'register' %}">here</a></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}
+
+{% block style %}
+<link href="{% static 'ints/css/body_background.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'ints/Js/index.js' %}"></script>
+{% endblock %}

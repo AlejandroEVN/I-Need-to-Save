@@ -1,0 +1,24 @@
+{% extends "ints/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="row">
+        <div class="col col-lg-6 m-auto">
+            <div class="text-center display-4">Register</div>
+            {% if err_msg %}
+            <div class="alert alert-danger">{{err_msg}}</div>
+            {% endif %}
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="container-fluid my-3">
+                        {{field}}
+                    </div>
+                {% endfor %}
+                <div class="container-fluid my-3 text-center">
+                    <input type="submit" class="btn btn-sm btn-outline-success w-25" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
