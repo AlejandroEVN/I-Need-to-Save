@@ -9,7 +9,7 @@ The app was entirely coded by me. The main objective of this project was to lear
 I have also introduced JavaScript pagination, which I coded without using any existing library. 
 The table containing the transactions made by the user can be filtered and ordered. All this functionality was coded with vanilla JavaScript.
 
-### Demo
+### **Demo**
 SOON
 
 ### **Pages**
@@ -66,7 +66,7 @@ File containing dictionaries that are used as templates to filter and manage the
 All of the files names refer to the HTML pages they affect. Most of the application's HTML is directly affected by JavaScript and updated with AJAX calls to the backend, reducing the amount of times that the HTMLs have to be rendered.
 The node_modules contains two libraries. ChartsJs and MomentJs.
 
-#### Tech Stack
+### **Tech Stack**
 - Python
 - Django
 - JavaScript
@@ -74,7 +74,7 @@ The node_modules contains two libraries. ChartsJs and MomentJs.
 - Bootstrap
 - CSS
 
-### Usage
+### **Usage**
 - Clone the repository into your machine.
 - In the terminal:
     - Run the command `pip install -r requirements.txt`.
