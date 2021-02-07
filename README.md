@@ -10,7 +10,10 @@ I have also introduced JavaScript pagination, which I coded without using any ex
 The table containing the transactions made by the user can be filtered and ordered. All this functionality was coded with vanilla JavaScript.
 
 ### **Demo**
-SOON
+
+<img src="./ints/demo/ints-demo1.gif" width="960" height="540" />
+<img src="./ints/demo/ints-demo2.gif" width="960" height="540" />
+<img src="./ints/demo/ints-demo3.gif" width="960" height="540" />
 
 ### **Pages**
 - **Index**: Landing page. Contains title and login form. Unregistered users have two links that takes them to the registration form.
