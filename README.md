@@ -6,8 +6,7 @@ in order to help you save more money!
 The motivation for this projoect comes from my own experience of not being able to efficiently keep track of what I spend. So the aim is to easily and efficiently display the expenditures to have a better control of what you spend.
 
 The main objective of this project was to learn how to work with data coming from the backend by using JavaScript libraries like ChartJS and MomentJS. 
-I have also introduced JavaScript pagination, which I coded without using any existing library. 
-The table containing the transactions made by the user can be filtered and ordered. All this functionality was coded with vanilla JavaScript.
+I have also introduced JavaScript pagination and table filtering/sorting, which I coded without using any existing library. All this functionality was coded with vanilla JavaScript.
 
 ### **Demo**
 
